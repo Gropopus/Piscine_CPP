@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:58:13 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/12 14:34:20 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/16 15:09:32 by thsembel          #+#    #+#             */
+/*   Updated: 2021/08/16 16:32:41 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+# include "HumanB.hpp"
 
-# include <iostream>
-# include <string>
-
-class	Contact
+HumanB::HumanB(std::string name) : _name(name)
 {
-	public:
-		Contact(void);
-		~Contact(void);
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	darksecret;
-		std::string	phone_nb;
-};
+	return ;
+}
 
-#endif
+HumanB::~HumanB(void)
+{
+	return ;
+}
+
+void	HumanB::setWeapon(Weapon &given_weapon)
+{
+	this->_weapon = &given_weapon;
+}
+
+void	HumanB::attack(void)
+{
+	std::cout << this->_name << " attacks with " << this->_weapon->getType() << std::endl;
+}

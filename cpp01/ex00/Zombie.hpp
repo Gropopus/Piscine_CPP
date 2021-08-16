@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 14:35:49 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/11 16:25:30 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/08/12 14:36:48 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@
 class Zombie
 {
 	public:
-		Zombie(std::string name);
+		Zombie(void);
 		~Zombie(void);
 
-	void annonce( void )
-	{
-		std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
-	};
+	void annonce( void ) const;
+	void give_name(std::string name);
+
 	private:
 		
 		std::string _name;

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:58:13 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/12 14:34:20 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/16 11:22:47 by thsembel          #+#    #+#             */
+/*   Updated: 2021/08/16 15:08:52 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
-
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+# include "Weapon.hpp"
 # include <iostream>
-# include <string>
 
-class	Contact
+class	HumanA
 {
 	public:
-		Contact(void);
-		~Contact(void);
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	darksecret;
-		std::string	phone_nb;
+		HumanA(std::string given_name, Weapon &given_weapon);
+		~HumanA(void);
+		void		attack(void);
+
+		Weapon		&weapon;
+		std::string	name;
 };
 
 #endif

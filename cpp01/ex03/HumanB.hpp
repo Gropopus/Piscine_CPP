@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:58:13 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/12 14:34:20 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/16 15:09:22 by thsembel          #+#    #+#             */
+/*   Updated: 2021/08/16 16:32:46 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
-
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
+# include "Weapon.hpp"
 # include <iostream>
-# include <string>
 
-class	Contact
+class	HumanB
 {
 	public:
-		Contact(void);
-		~Contact(void);
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	darksecret;
-		std::string	phone_nb;
+		HumanB(std::string name);
+		~HumanB(void);
+		void		attack(void);
+		void		setWeapon(Weapon &given_weapon);
+
+	private:
+		Weapon *_weapon;
+		std::string _name;
 };
 
 #endif

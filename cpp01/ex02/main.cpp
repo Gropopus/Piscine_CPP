@@ -5,21 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/11 14:46:57 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/12 11:24:48 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/12 11:32:30 by thsembel          #+#    #+#             */
+/*   Updated: 2021/08/16 11:16:20 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.hpp"
+# include <iostream>
 
 int		main(void)
 {
-	Zombie tata;
-	tata.give_name("tata");
-	Zombie *toto = newZombie("Toto");
-	tata.annonce();
-	toto->annonce();
-	randomChump("Tutu");
-	delete toto;
+	std::string string = "HI THIS IS BRAIN";
+	std::string *stringPTR;
+	std::string &stringREF = string;
+
+	stringPTR = &string;
+	std::cout << "Address of the string:\t\t\t" << &string << std::endl;
+	std::cout << "Address of the string using stringPTR:\t" << stringPTR << std::endl;
+	std::cout << "Address of the string using stringREF:\t" << &stringREF << std::endl;
+	std::cout << std::endl;
+	std::cout << "string:\t\t" << string << std::endl;
+	std::cout << "stringPTR:\t" << *stringPTR << std::endl;
+	std::cout << "stringREF:\t" << stringREF << std::endl;
+
 	return (0);
 }

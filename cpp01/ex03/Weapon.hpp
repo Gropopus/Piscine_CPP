@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:58:13 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/12 14:34:20 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/16 11:36:09 by thsembel          #+#    #+#             */
+/*   Updated: 2021/08/16 14:59:35 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
-
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 # include <iostream>
-# include <string>
 
-class	Contact
+class	Weapon
 {
 	public:
-		Contact(void);
-		~Contact(void);
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	darksecret;
-		std::string	phone_nb;
+
+		Weapon(std::string name);
+		~Weapon(void);
+		void		setType(std::string name);
+		std::string	const &getType(void) const;
+
+	private:
+		std::string _type;
 };
 
 #endif

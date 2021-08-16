@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:58:13 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/12 14:34:20 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/16 11:30:54 by thsembel          #+#    #+#             */
+/*   Updated: 2021/08/16 15:09:09 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+# include "HumanA.hpp"
 
-# include <iostream>
-# include <string>
-
-class	Contact
+HumanA::HumanA(std::string given_name, Weapon &given_weapon) : weapon(given_weapon), name(given_name)
 {
-	public:
-		Contact(void);
-		~Contact(void);
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	darksecret;
-		std::string	phone_nb;
-};
+	return ;
+}
 
-#endif
+HumanA::~HumanA(void)
+{
+	return ;
+}
+
+void	HumanA::attack(void)
+{
+	std::cout << this->name << " attacks with " << this->weapon.getType() << std::endl;
+}
