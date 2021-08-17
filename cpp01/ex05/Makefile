@@ -6,7 +6,7 @@
 #    By: thsembel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/16 18:19:04 by thsembel          #+#    #+#              #
-#    Updated: 2021/08/16 18:19:40 by thsembel         ###   ########.fr        #
+#    Updated: 2021/08/17 11:31:04 by thsembel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ INCLUDES	=	./Karen.hpp
 
 HEAD		=	./
 
-NAME		= sed.out
+NAME		= Karen2.0
 
 CC			= clang++
 

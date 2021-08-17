@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 18:19:55 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/16 19:08:09 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:08:12 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class	Karen
 		void	info(void);
 		void	warning(void);
 		void	error(void);
-		std::string _level;
+		std::string _level[4];
+		void	(Karen::*dispatch[4])(void);
 };
 
 

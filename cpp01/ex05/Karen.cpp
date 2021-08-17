@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 18:21:22 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/16 19:08:11 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/08/17 11:33:05 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 Karen::Karen(void)
 {
-	this->_level = "DEBBUG";
+	this->_level[0] = "DEBUG";
+	this->_level[1] = "INFO";
+	this->_level[2] = "WARNING";
+	this->_level[3] = "ERROR";
+	dispatch[0] = &Karen::debug;
+	dispatch[1] = &Karen::info;
+	dispatch[2] = &Karen::warning;
+	dispatch[3] = &Karen::error;
 	return ;
 }
 
@@ -25,7 +32,13 @@ Karen::~Karen(void)
 
 void	Karen::complain(std ::string level)
 {
-	
+	int i = 0;
+	while (i < 4)
+	{
+		if (level == this->_level[i])
+			((*this).*dispatch[i])();
+		i++;
+	}
 }
 
 void	Karen::debug(void)
