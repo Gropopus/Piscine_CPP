@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 18:19:55 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/17 11:42:55 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/16 18:48:58 by thsembel          #+#    #+#             */
+/*   Updated: 2021/08/17 11:53:13 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef KAREN_HPP
-# define KAREN_HPP
-# include <iostream>
+# include "Karen.hpp"
 
-class	Karen
+
+//token :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
+int		main(int ac, char **av)
 {
-	public:
-		Karen(void);
-		~Karen(void);
-		void	complain(std::string level);
-		
-	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
-		std::string _level[4];
-		void	(Karen::*dispatch[4])(void);
-};
-
-
-#endif
+	Karen karen;
+	if (ac != 2)
+	{
+		std::cout << "Usage: ./KarenFilter <Log level>" << std::endl;
+		return (0);
+	}
+	karen.complain(av[1]);
+	return (0);
+}
