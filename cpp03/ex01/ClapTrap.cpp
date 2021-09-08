@@ -6,11 +6,13 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:15:20 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/01 17:42:39 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/09/08 14:45:44 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+/************* Constructors & Destructor **************/
 
 ClapTrap::ClapTrap(std::string name) : _Name(name), _Hitpoints(10),
 	_Energy_points(10), _Attack_damage(0)
@@ -31,6 +33,8 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "Destructor called" << std::endl;
 	return ;
 }
+
+/************** Member Functions ******************/
 
 void			ClapTrap::setDamage(unsigned int amount)
 {
@@ -98,4 +102,12 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_Hitpoints += amount;
 	if (_Hitpoints > 10)
 		_Hitpoints = 10;
+}
+
+/************ Overloard **************/
+
+ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
+{
+	this->_Attack_damage = rhs.getDamage();
+	return (*this);
 }
