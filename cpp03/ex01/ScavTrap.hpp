@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:47:51 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/20 18:04:46 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/09/01 19:28:50 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define SCAVTRAP_HPP
 # include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : ClapTrap
 {
-
+	public:
+		ScavTrap(void);
+		~ScavTrap(void);
+	private:
 };
 
 
