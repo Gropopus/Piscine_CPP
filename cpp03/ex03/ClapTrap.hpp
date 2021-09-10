@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:16:31 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/10 11:22:57 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/09/10 15:05:51 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	ClapTrap
 		ClapTrap(ClapTrap const &copy);
 		~ClapTrap(void);
 
-		void			attack(std::string const & target);
+		virtual void			attack(std::string const & target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 		/* setter function */

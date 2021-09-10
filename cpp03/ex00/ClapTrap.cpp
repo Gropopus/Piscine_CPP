@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:15:20 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/08 14:45:44 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/09/10 11:01:15 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 {
 	this->_Attack_damage = rhs.getDamage();
+	this->_Energy_points = rhs.getEP();
+	this->_Hitpoints = rhs.getHP();
+	this->_Name = rhs.getName();
 	return (*this);
 }

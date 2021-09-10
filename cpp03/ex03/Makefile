@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: thsembel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/19 11:20:32 by thsembel          #+#    #+#              #
-#    Updated: 2021/09/08 13:55:23 by thsembel         ###   ########.fr        #
+#    Created: 2021/08/20 14:12:18 by thsembel          #+#    #+#              #
+#    Updated: 2021/09/10 12:07:39 by thsembel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,20 @@ PURPLE = \033[0;95m
 BLUE = \033[0;34m
 BOLD = \033[1m
 
-SRCS		=	./Fixed.cpp \
+SRCS		=	./ClapTrap.cpp \
+				./ScavTrap.cpp \
+				./FragTrap.cpp \
+				./DiamondTrap.cpp \
 				./main.cpp
 
-INCLUDES	=	./Fixed.hpp
+INCLUDES	=	./ClapTrap.hpp \
+				./ScavTrap.hpp \
+				DiamondTrap.hpp \
+				./FragTrap.hpp
 
 HEAD		=	./
 
-NAME		= Fixed
+NAME		= a.out
 
 CC			= clang++
 
@@ -33,7 +39,7 @@ OBJS		= ${SRCS:.cpp=.o}
 
 RM			= rm -f
 
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
 .c.o:
 		@${CC} ${CFLAGS} -I${HEAD} -c $< -o ${<:.cpp=.o}

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 11:22:58 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/08 11:29:56 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/08 11:37:04 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/08 11:39:32 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,41 @@ class Fixed
 		Fixed(const int nb);
 		Fixed(const float nb);
 		~Fixed();
-//----------- Overloads (Member function) -----------------//
-		Fixed &operator=(Fixed const &rhs);
-//----------- Member functions ---------//
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
 
-		float	toFloat(void) const;
+//----------- Overloads -----------------//
+
+		Fixed &operator=(Fixed const &rhs);
+		Fixed &operator++();
+		Fixed &operator--();
+		Fixed operator++(int);
+		Fixed operator--(int);
+		Fixed operator*(Fixed const & rhs) const;
+		Fixed operator/(Fixed const & rhs) const;
+		Fixed operator+(Fixed const & rhs) const;
+		Fixed operator-(Fixed const & rhs) const;
+		bool operator<(Fixed const & rhs);
+		bool operator<=(Fixed const & rhs);
+		bool operator>(Fixed const & rhs);
+		bool operator>=(Fixed const & rhs);
+		bool operator==(Fixed const & rhs);
+		bool operator!=(Fixed const & rhs);
+
+//----------- Member functions ---------//
+
+		int		getRawBits(void) const;
 		int		toInt(void) const;
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		static Fixed & min(Fixed & rh, Fixed & rhs);
+		static Fixed & max(Fixed & rh, Fixed & rhs);
+		static Fixed const & min(Fixed const & rh, Fixed const & rhs);
+		static Fixed const & max(Fixed const & rh, Fixed const & rhs);
 
 	private:
 		int _fixed_value;
-		int static const _fract_nb;
+		int static const _fract_nb = 8;
 };
-//------------ Overloads (non Member function) ---------/
+
+//--- Overloads (Non member function) ---//
 std::ostream		&operator<<(std::ostream &output, Fixed const &rhs);
 #endif

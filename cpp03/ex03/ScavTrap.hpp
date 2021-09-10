@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 11:30:54 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/06 11:22:52 by thsembel         ###   ########.fr       */
+/*   Created: 2021/08/20 17:47:51 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/10 13:57:16 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "HumanA.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "ClapTrap.hpp"
 
-HumanA::HumanA(std::string given_name, Weapon &given_weapon) : weapon(given_weapon), name(given_name)
+class ScavTrap : virtual public ClapTrap
 {
-	return ;
-}
+	public:
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &copy, std::string name);
+		~ScavTrap(void);
+		ScavTrap &operator=(ScavTrap const &rhs);
+		void guardGate(void) const;
+		void attack(std::string const &target);
+	private:
+};
 
-HumanA::~HumanA(void)
-{
-	return ;
-}
 
-void	HumanA::attack(void)
-{
-	std::cout << this->name << " attacks with " << this->weapon.getType() << std::endl;
-}
+#endif

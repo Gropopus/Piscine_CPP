@@ -6,7 +6,7 @@
 #    By: thsembel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 11:20:32 by thsembel          #+#    #+#              #
-#    Updated: 2021/08/19 11:21:49 by thsembel         ###   ########.fr        #
+#    Updated: 2021/09/08 13:56:00 by thsembel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ INCLUDES	=	./Fixed.hpp
 
 HEAD		=	./
 
-NAME		= a.out
+NAME		= Fixed
 
 CC			= clang++
 

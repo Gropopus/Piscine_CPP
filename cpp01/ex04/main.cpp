@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 16:36:53 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/16 17:37:05 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/09/06 11:57:51 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		ft_file_handler(std::string const &file, std::string const &s1, std::string
 			return (3);
 		ft_sed(text, s1, s2);
 		output << text;
+		output << std::endl;
 		text.clear();
 	}
 	return (0);

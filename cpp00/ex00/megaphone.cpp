@@ -6,7 +6,7 @@
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:36:00 by thsembel          #+#    #+#             */
-/*   Updated: 2021/08/04 13:42:35 by thsembel         ###   ########.fr       */
+/*   Updated: 2021/09/02 10:54:48 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 	{
-		std::cout << "SHHHHH... I THINK THE STUDENTS ARE ASLEEP..." << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
 	for (i = 1; i < ac ;i++)
