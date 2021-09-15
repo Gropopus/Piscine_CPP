@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 18:02:47 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/14 10:54:53 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/13 15:41:23 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/13 15:44:37 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-Cat::Cat(void) : Animal()
-{
-	setType("Cat");
-	return ;
-}
+# include <iostream>
+# include "WrongAnimal.hpp"
 
-Cat::Cat(Cat const &copy)
+class WrongCat : public WrongAnimal
 {
-	*this = copy;
-	return ;
-}
+	public:
+		WrongCat(void);
+		WrongCat(WrongCat const &copy);
+		~WrongCat(void);
+		void	makeSound(void) const;
+		WrongCat &operator=(WrongCat const &rhs);
+};
 
-Cat::~Cat(void)
-{
-	std::cout << "Cat Destructor called" << std::endl;
-	return ;
-}
-
-void Cat::makeSound(void) const
-{
-	std::cout << "MIAOU MIAOU MIAOU !!!" << std::endl;
-}
-
-Cat	&Cat::operator=(Cat const &rhs)
-{
-	this->type = rhs.getType();
-	return (*this);
-}
+#endif

@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 18:02:47 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/14 10:54:53 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/14 18:13:07 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/14 19:18:14 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# ifndef ICE_HPP
+# define ICE_HPP
+# include <iostream>
+# include "AMateria.hpp"
+# include "Character.hpp"
 
-Cat::Cat(void) : Animal()
-{
-	setType("Cat");
-	return ;
-}
 
-Cat::Cat(Cat const &copy)
+class Ice : public AMateria
 {
-	*this = copy;
-	return ;
-}
+	public:
+		Ice();
+		Ice(Ice const &src);
+		~Ice();
 
-Cat::~Cat(void)
-{
-	std::cout << "Cat Destructor called" << std::endl;
-	return ;
-}
+		Ice			&operator=(Ice const &rhs);
 
-void Cat::makeSound(void) const
-{
-	std::cout << "MIAOU MIAOU MIAOU !!!" << std::endl;
-}
+		AMateria	*clone() const;
+		void		use(ICharacter &target);
+};
 
-Cat	&Cat::operator=(Cat const &rhs)
-{
-	this->type = rhs.getType();
-	return (*this);
-}
+#endif

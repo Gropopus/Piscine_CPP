@@ -1,41 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 18:02:47 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/14 10:54:53 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/13 15:33:36 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/14 11:22:16 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# include "WrongAnimal.hpp"
 
-Cat::Cat(void) : Animal()
+WrongAnimal::WrongAnimal(void) : type("Animal")
 {
-	setType("Cat");
 	return ;
 }
 
-Cat::Cat(Cat const &copy)
+WrongAnimal::WrongAnimal(WrongAnimal const &copy)
 {
 	*this = copy;
 	return ;
 }
 
-Cat::~Cat(void)
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "Cat Destructor called" << std::endl;
+	std::cout << "WrongAnimal Destructor called" << std::endl;
 	return ;
 }
 
-void Cat::makeSound(void) const
+std::string WrongAnimal::getType(void) const
 {
-	std::cout << "MIAOU MIAOU MIAOU !!!" << std::endl;
+	return (this->type);
 }
 
-Cat	&Cat::operator=(Cat const &rhs)
+void	WrongAnimal::setType(std::string new_type)
+{
+	this->type = new_type;
+}
+
+void WrongAnimal::makeSound(void) const
+{
+	std::cout << "Fake animal sound" << std::endl;
+}
+
+WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &rhs)
 {
 	this->type = rhs.getType();
 	return (*this);

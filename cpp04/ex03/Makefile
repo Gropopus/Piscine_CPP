@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: thsembel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/20 14:12:18 by thsembel          #+#    #+#              #
-#    Updated: 2021/09/14 11:16:22 by thsembel         ###   ########.fr        #
+#    Created: 2021/09/14 17:01:14 by thsembel          #+#    #+#              #
+#    Updated: 2021/09/14 19:12:26 by thsembel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,19 +18,21 @@ PURPLE = \033[0;95m
 BLUE = \033[0;34m
 BOLD = \033[1m
 
-SRCS		=	./Animal.cpp \
-				./Dog.cpp \
-				./Cat.cpp \
-				./WrongAnimal.cpp \
-				./WrongCat.cpp \
+SRCS		=	./AMateria.cpp \
+				./Ice.cpp \
+				./Cure.cpp \
+				./Character.cpp \
+				./MateriaSource.cpp \
 				./main.cpp
 
 
-INCLUDES	=	./Animal.hpp \
-				./WrongAnimal.hpp \
-				./WrongCat.hpp \
-				./Dog.hpp \
-				./Cat.hpp
+INCLUDES	=	./AMateria.hpp \
+				./Ice.hpp \
+				./Cure.hpp \
+				./ICharacter.hpp \
+				./IMateriaSource.hpp \
+				./Character.hpp \
+				./MateriaSource.hpp
 
 HEAD		=	./
 
@@ -42,7 +44,7 @@ OBJS		= ${SRCS:.cpp=.o}
 
 RM			= rm -f
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 .c.o:
 		@${CC} ${CFLAGS} -I${HEAD} -c $< -o ${<:.cpp=.o}

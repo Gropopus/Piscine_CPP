@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 18:02:47 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/14 10:54:53 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/10 17:25:03 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/14 13:21:40 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <iostream>
 
-Cat::Cat(void) : Animal()
+class Animal
 {
-	setType("Cat");
-	return ;
-}
+	public:
+		Animal(void);
+		Animal(Animal const &copy);
+		virtual ~Animal(void);
+		void virtual	makeSound(void) const;
+		void			setType(std::string new_type);
+		std::string		getType(void) const;
+		Animal &operator=(Animal const &rhs);
+	protected:
+		std::string type;
+	private:
+};
 
-Cat::Cat(Cat const &copy)
-{
-	*this = copy;
-	return ;
-}
-
-Cat::~Cat(void)
-{
-	std::cout << "Cat Destructor called" << std::endl;
-	return ;
-}
-
-void Cat::makeSound(void) const
-{
-	std::cout << "MIAOU MIAOU MIAOU !!!" << std::endl;
-}
-
-Cat	&Cat::operator=(Cat const &rhs)
-{
-	this->type = rhs.getType();
-	return (*this);
-}
+#endif

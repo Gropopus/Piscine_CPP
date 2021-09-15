@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 18:02:47 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/14 10:54:53 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/14 18:20:52 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/15 11:12:04 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# ifndef CURE_HPP
+# define CURE_HPP
+# include <iostream>
+# include "AMateria.hpp"
+# include "Character.hpp"
 
-Cat::Cat(void) : Animal()
+class Cure : public AMateria
 {
-	setType("Cat");
-	return ;
-}
+	public:
+		Cure();
+		Cure(Cure const &src);
+		~Cure();
 
-Cat::Cat(Cat const &copy)
-{
-	*this = copy;
-	return ;
-}
+		Cure			&operator=(Cure const &rhs);
+		AMateria	*clone() const;
+		void		use(ICharacter &target);
+};
 
-Cat::~Cat(void)
-{
-	std::cout << "Cat Destructor called" << std::endl;
-	return ;
-}
-
-void Cat::makeSound(void) const
-{
-	std::cout << "MIAOU MIAOU MIAOU !!!" << std::endl;
-}
-
-Cat	&Cat::operator=(Cat const &rhs)
-{
-	this->type = rhs.getType();
-	return (*this);
-}
+# endif

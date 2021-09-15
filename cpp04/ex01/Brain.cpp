@@ -1,51 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 17:35:10 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/14 10:54:24 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/14 11:24:51 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/14 15:19:12 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Animal.hpp"
+# include "Brain.hpp"
 
-Animal::Animal(void) : type("Animal")
+Brain::Brain(void)
 {
+	std::cout << "Brain Constructor called" << std::endl;
 	return ;
 }
 
-Animal::Animal(Animal const &copy)
+Brain::Brain(Brain const &copy)
 {
 	*this = copy;
 	return ;
 }
 
-Animal::~Animal(void)
+Brain::~Brain(void)
 {
-	std::cout<< "Animal Destructor called" << std::endl;
+	std::cout << "Brain Destructor called" << std::endl;
 	return ;
 }
 
-std::string Animal::getType(void) const
+void	Brain::setIdea(std::string idea[100])
 {
-	return (this->type);
+	int i = 0;
+
+	while (i < 100)
+	{
+		this->_Ideas[i] = idea[i];
+		i++;
+	}
 }
 
-void	Animal::setType(std::string new_type)
+std::string		*Brain::getIdea(void)
 {
-	this->type = new_type;
+	return (this->_Ideas);
 }
 
-void Animal::makeSound(void) const
+Brain &Brain::operator=(Brain const &rhs)
 {
-	std::cout << "Weird animal sound" << std::endl;
-}
-
-Animal	&Animal::operator=(Animal const &rhs)
-{
-	this->type = rhs.getType();
+	int i = 0;
+	while (i < 100)
+	{
+		this->_Ideas[i] = rhs._Ideas[i];
+		i++;
+	}
 	return (*this);
 }

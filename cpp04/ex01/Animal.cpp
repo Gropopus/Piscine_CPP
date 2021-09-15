@@ -1,41 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsembel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 18:02:47 by thsembel          #+#    #+#             */
-/*   Updated: 2021/09/14 10:54:53 by thsembel         ###   ########.fr       */
+/*   Created: 2021/09/10 17:35:10 by thsembel          #+#    #+#             */
+/*   Updated: 2021/09/14 13:21:19 by thsembel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# include "Animal.hpp"
 
-Cat::Cat(void) : Animal()
+Animal::Animal(void) : type("Animal")
 {
-	setType("Cat");
 	return ;
 }
 
-Cat::Cat(Cat const &copy)
+Animal::Animal(Animal const &copy)
 {
 	*this = copy;
 	return ;
 }
 
-Cat::~Cat(void)
+Animal::~Animal(void)
 {
-	std::cout << "Cat Destructor called" << std::endl;
+	std::cout<< "Animal Destructor called" << std::endl;
 	return ;
 }
 
-void Cat::makeSound(void) const
+std::string Animal::getType(void) const
 {
-	std::cout << "MIAOU MIAOU MIAOU !!!" << std::endl;
+	return (this->type);
 }
 
-Cat	&Cat::operator=(Cat const &rhs)
+void	Animal::setType(std::string new_type)
+{
+	this->type = new_type;
+}
+
+void Animal::makeSound(void) const
+{
+	std::cout << "Weird animal sound" << std::endl;
+}
+
+Animal	&Animal::operator=(Animal const &rhs)
 {
 	this->type = rhs.getType();
 	return (*this);

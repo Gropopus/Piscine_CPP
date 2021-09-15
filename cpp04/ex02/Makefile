@@ -6,7 +6,7 @@
 #    By: thsembel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 14:12:18 by thsembel          #+#    #+#              #
-#    Updated: 2021/09/14 11:16:22 by thsembel         ###   ########.fr        #
+#    Updated: 2021/09/14 16:43:50 by thsembel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,17 +18,15 @@ PURPLE = \033[0;95m
 BLUE = \033[0;34m
 BOLD = \033[1m
 
-SRCS		=	./Animal.cpp \
+SRCS		=	./AAnimal.cpp \
 				./Dog.cpp \
 				./Cat.cpp \
-				./WrongAnimal.cpp \
-				./WrongCat.cpp \
+				./Brain.cpp \
 				./main.cpp
 
 
-INCLUDES	=	./Animal.hpp \
-				./WrongAnimal.hpp \
-				./WrongCat.hpp \
+INCLUDES	=	./AAnimal.hpp \
+				./Brain.hpp \
 				./Dog.hpp \
 				./Cat.hpp
 
@@ -42,7 +40,7 @@ OBJS		= ${SRCS:.cpp=.o}
 
 RM			= rm -f
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 .c.o:
 		@${CC} ${CFLAGS} -I${HEAD} -c $< -o ${<:.cpp=.o}
